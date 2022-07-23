@@ -18,9 +18,32 @@
             <%- include("aside.ejs") %>
             <article class="content col-md-8">
                 <h1>Số người đã truy cập website: <%= count %></h1>
-                <% if(count > 10){ %>
-                    <h2>Đông người quá...</h2>
+                <% if(count > 15){ %>
+                   <% for(var i=0;i<10;i++){ %>
+                        <h2>Đông người quá...</h2>
+                    <% } %>
                 <% } %>
+                <h2>Danh sách sinh viên:</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Mark</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0;i<studentList.length;i++){ %>
+                            <tr>
+                                <td><%= i+1 %></td>
+                                <td><%= studentList[i].name %></td>
+                                <td><%= studentList[i].age %></td>
+                                <td><%= studentList[i].mark %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
             </article>
         </div>
     </div>

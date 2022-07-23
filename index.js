@@ -6,12 +6,26 @@ app.listen(port,function () {
     console.log("server is running..");
 });
 app.set("view engine","ejs");
+app.use(express.static("public")); // cho phep truy cap cac file static
 var count = 0;
 // list route
 app.get("/",function (req,res) {
     count++;
+    var studentList = [
+        {
+            name:'Nguyễn Văn An',
+            age:18,
+            mark:9
+        },
+        {
+            name:'Nguyễn Duy Anh',
+            age:20,
+            mark:7
+        }
+    ];
    res.render("home",{
-       "count":count
+       "count":count,
+       "studentList":studentList
    });
 });
 
