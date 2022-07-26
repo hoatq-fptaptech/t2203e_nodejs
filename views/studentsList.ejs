@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Birthday</th>
+        <th>Class</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for(var i=0;i<studentList.length;i++){ %>
+        <tr>
+            <td><%= i+1 %></td>
+            <td><%= studentList[i].name %></td>
+            <td><%= studentList[i].birthday %></td>
+            <td><%= studentList[i].cid %></td>
+        </tr>
+    <% } %>
+    </tbody>
+</table>

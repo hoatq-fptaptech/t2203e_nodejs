@@ -23,8 +23,27 @@
                         <h2>Đông người quá...</h2>
                     <% } %>
                 <% } %>
-                <h2>Danh sách sinh viên:</h2>
-                <%- include("studentsList.ejs") %>
+                <h2>Danh sách lớp học:</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Room</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0;i<studentList.length;i++){ %>
+                            <tr>
+                                <td><%= i+1 %></td>
+                                <td><%= studentList[i].name %></td>
+                                <td><%= studentList[i].room %></td>
+                                <td><a href="/classes-detail?cid=<%= studentList[i].cid %>">chi tiết</a> </td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
             </article>
         </div>
     </div>

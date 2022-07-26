@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>Demo</title>
     <%- include("css.ejs") %>
 </head>
 <body>
@@ -17,13 +17,8 @@
         <div class="row">
             <%- include("aside.ejs") %>
             <article class="content col-md-8">
-                <h1>Số người đã truy cập website: <%= count %></h1>
-                <% if(count > 15){ %>
-                   <% for(var i=0;i<10;i++){ %>
-                        <h2>Đông người quá...</h2>
-                    <% } %>
-                <% } %>
-                <h2>Danh sách sinh viên:</h2>
+                <h1>Chi tiết lớp học <%= classDetail.name %></h1>
+                <h2>Danh sách sinh viên của lớp:</h2>
                 <%- include("studentsList.ejs") %>
             </article>
         </div>
