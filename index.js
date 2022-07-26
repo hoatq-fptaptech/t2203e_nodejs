@@ -57,6 +57,8 @@ app.get("/classes",function (req,res) {
 app.get("/classes-detail",function (req,res) {
     // phải tìm cách lấy đc giá trị tham số trên url
     var cid = req.query.cid;
+    // var s = req.query.s;
+    // "select * from students where name like '%"+s+"%';";
     const sql_txt = "select * from classes where cid= " +cid+";"+
         "select * from students where cid ="+cid+";";
     conn.query(sql_txt,function (err,data) {
